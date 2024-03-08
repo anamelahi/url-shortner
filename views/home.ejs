@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        *{
+            margin: 10;
+            padding: 10;
+            box-sizing: border-box;
+            font-family: 'Gilroy'
+        }
+
+        html, body{
+            height: 100%;
+            width: 100%;
+        }   
+        .main{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 200px;
+            /* background-color: rgb(139, 139, 139); */
+        }
+    </style>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <h1>URL Shortner</h1>
+    
+        <div>
+            <form method="POST" action="/url">
+                <label for="">Enter URL</label>
+                <input type="text" placeholder="url" name="url">
+                <button type="submit">Generate</button>
+            </form>
+            <% if (locals.id) { %>
+                <p>URL Generated: http://localhost:3000/url/<%= id %></p>
+            <% } %>
+        </div>
+    </div>
+    
+</body>
+</html>
